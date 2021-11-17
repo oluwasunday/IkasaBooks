@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewData["Title"] = "Admin Page---Add Book";
+    Layout = "_Admin";
+}
+
+
+@model IkasaBooks.MVC.ViewModels.HomeViewModel;
+@{
+    ViewData["Title"] = "View All Books";
+
+    int c = 1;
+}
+
+
+
+<h2 class="bg-green">List Of All Books</h2>
+<table class="table table-striped table-white">
+    <thead class="bg-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">BookName</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Book Url</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                <th scope="row">@c</th>
+                <td>@book.Name</td>
+
+                @*<td>@book.Authors.Select(x => x.Name)</td>*@
+                <td>@book.ISBN</td>
+
+
+                <td>@book.BookUrl</td>
+                <td class="btn btn-danger btn-sm"><a asp-controller="Admin" asp-action="DeleteBookById" asp-route-id="@book.Id">Delete</a></td>
+            </tr>
+            c++;
+        }
+
+    </tbody>
+</table>

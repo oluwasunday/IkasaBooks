@@ -1,0 +1,133 @@
+﻿@model IkasaBooks.MVC.ViewModels.HomeViewModel
+
+@{ 
+    var uniq = new HashSet<string>();
+
+    foreach (var item in Model.Categories)
+    {
+        uniq.Add(item.CategoryNames);
+    }
+}
+
+
+<div class="text-center">
+
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Catergories</span>
+                        </div>
+                        <ul>
+
+                            @foreach (var category in uniq)
+                            {
+                                <li>
+                                    <a asp-action="Index"
+                                       asp-controller="Books" asp-route-categoryname="@category">@category</a>
+                                </li>
+
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form asp-action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    @*<span class="arrow_carrot-down"></span>*@
+                                </div>
+                                <input type="text" placeholder="Search for a book?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+234 7063 358 682</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="img/hero/banner2.png">
+                        <div class="hero__text">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+
+                    @foreach (var item in Model.Books)
+                    {
+                        <div class="col-lg-3">
+                            <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
+                                <img src="@item.ImageURL" alt="@item.Name" />
+                                <h5><a asp-action="Index" asp-controller="BookDetail" asp-route-id="@item.Id">@item.Name</a></h5>
+                            </div>
+                        </div>
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Most Featured Books</h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row featured__filter">
+                @foreach (var book in Model.IsFeatured)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
+                                <img src="@book.ImageURL" alt="@book.Name" />
+                                
+                            </div>
+                            <div class="featured__item__text">
+                                <h5>@book.Name</h5>
+                                <a class="btn btn-success btn-block" asp-action="Index" asp-controller="BookDetail" asp-route-id="@book.Id">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+  
+
+
+</div>

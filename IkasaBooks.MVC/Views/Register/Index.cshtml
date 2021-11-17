@@ -1,0 +1,76 @@
+﻿@model IkasaBooks.Models.DTOs.AddUserDTO;
+@{
+    ViewData["Title"] = "Register";
+}
+<section>
+    <div>
+            <div class="row offset-3">
+                <div class="col-md-8">
+
+                    <div class="card">
+
+
+                        @ViewBag.Message
+
+                        <form method="post" asp-action="AddUser">
+                            <div class=" border p-3">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="form-group row">
+                                            <div class="col-4">
+                                                <label asp-for="FullName"></label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input asp-for="FullName" class="form-control" placeholder="Fullname" required />
+                                                <span asp-validation-for="FullName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-4">
+                                                <label asp-for="Email"></label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input asp-for="Email" class="form-control" placeholder="Email" required />
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-4">
+                                                <label asp-for="PhoneNumber"></label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" required />
+                                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-4">
+                                                <label asp-for="Password"></label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input asp-for="Password" class="form-control" type="password" placeholder="Password" required />
+                                                <span asp-validation-for="Password" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-8 offset-4 row">
+                                                <div class="col">
+                                                    <input type="submit" class="btn btn-info w-100" value="Submit" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        @* Keep this empty *@
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IkasaBooks.MVC</title>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/elegant-icons.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/nice-select.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/slicknav.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/style.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+
+
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i>IkasaBooks.com</li>
+                                <li>Read and Download Books for free</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a asp-action="#"><i class="fa fa-facebook"></i></a>
+                                <a asp-action="#"><i class="fa fa-twitter"></i></a>
+                                <a asp-action="#"><i class="fa fa-linkedin"></i></a>
+                                <a asp-action="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <img src="img/language.png" alt="">
+                                <div>English</div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </header>
+
+
+
+
+    <div class="container">
+        <div class="row mt-4">
+
+
+
+
+            <div class="col-md-6">
+                <section>
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+
+
+
+                            <a href="./index.html"><img src="img/loggo.jpg" alt=""></a>
+                            <i class="fa fa-bars"></i>
+                            <span>ADMIN DASHBOARD</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <a asp-action="AddBook" asp-controller="Admin">Add A Book</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="AllBooks" asp-controller="Admin">All Books</a>
+                            </li>
+                            <li>
+                                <a asp-action="Users" asp-controller="Admin">All Users</a>
+                            </li>
+
+
+
+
+                        </ul>
+                    </div>
+
+
+
+
+                </section>
+            </div>
+
+
+
+
+            <div class="col-md-6 mb-2">
+                <section>
+                    <main role="main">
+                        <div class="card">
+                            @RenderBody()
+                        </div>
+                    </main>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a asp-action="index" asp-controller="Home"><img src="img/loggo.jpg" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello@colorlib.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a asp-action="#">About Us</a></li>
+                            <li><a asp-action="#">About Our Shop</a></li>
+                            <li><a asp-action="#">Secure Shopping</a></li>
+                            <li><a asp-action="#">Delivery infomation</a></li>
+                            <li><a asp-action="#">Privacy Policy</a></li>
+                            <li><a asp-action="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a asp-action="#">Who We Are</a></li>
+                            <li><a asp-action="#">Our Services</a></li>
+                            <li><a asp-action="#">Projects</a></li>
+                            <li><a asp-action="#">Contact</a></li>
+                            <li><a asp-action="#">Innovation</a></li>
+                            <li><a asp-action="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a asp-action="#"><i class="fa fa-facebook"></i></a>
+                            <a asp-action="#"><i class="fa fa-instagram"></i></a>
+                            <a asp-action="#"><i class="fa fa-twitter"></i></a>
+                            <a asp-action="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery-3.3.1.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.nice-select.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery-ui.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.slicknav.js"></script>
+    <script src="~/lib/jquery/dist/mixitup.min.js"></script>
+    <script src="~/lib/jquery/dist/owl.carousel.min.js"></script>
+    <script src="~/lib/jquery/dist/main.js"></script>
+
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+
+
+
+
+
+</body>
+</html>

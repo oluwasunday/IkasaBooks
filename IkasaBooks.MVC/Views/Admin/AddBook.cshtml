@@ -1,0 +1,372 @@
+﻿@{
+    ViewData["Title"] = "Admin Page---Add Book";
+    Layout = "_Admin";
+}
+
+
+
+
+@model IkasaBooks.Models.DTOs.CreateBookDTO;
+@{
+    ViewData["Title"] = "Register";
+}
+<section>
+
+
+
+
+
+    <h4 class="text-center">Add A Book</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form method="post" asp-action="AddBook">
+        <div class=" border p-3">
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Name"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Name" class="form-control" required />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="ISBN"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="ISBN" class="form-control" required />
+                            <span asp-validation-for="ISBN" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Description"></label>
+                        </div>
+                        <div class="col-8">
+                            <textarea asp-for="Description" class="form-control" required ></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="ImageURL"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="ImageURL" class="form-control" required />
+                            <span asp-validation-for="ImageURL" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="BookUrl"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="BookUrl" class="form-control" required />
+                            <span asp-validation-for="BookUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="CategoryName"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="CategoryName" class="form-control" required />
+                            <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="IsPdf"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="IsPdf" class="form-control" />
+                            <span asp-validation-for="IsPdf" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="IsFeatured"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="IsFeatured" class="form-control" />
+                            <span asp-validation-for="IsFeatured" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="AuthorName"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="AuthorName" class="form-control" required />
+                            <span asp-validation-for="AuthorName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Publisher"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Publisher" class="form-control" required />
+                            <span asp-validation-for="Publisher" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="YearPublished"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="YearPublished" class="form-control" required />
+                            <span asp-validation-for="YearPublished" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-8 offset-4 row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-info w-100" value="Submit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    @* Keep this empty *@
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*
+
+
+
+
+            @using (Html.BeginForm("Catname", "Catname", FormMethod.Post, new { role = "form" }))
+            {
+                @Html.AntiForgeryToken();
+
+
+
+                <div class="row">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Name, new { @class = "control-label" })
+
+
+
+                            @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.ISBN, new { @class = "control-label" })
+
+
+
+                            @Html.TextBoxFor(c => c.ISBN, new { @class = "form-control" })
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Description, new { @class = "control-label" })
+
+                            @Html.TextBoxFor(c => c.Description, new { @class = "form-control" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.ImageURL, new { @class = "control-label" })
+
+                            @Html.TextBoxFor(c => c.ImageURL, new { @class = "form-control" })
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.BookUrl, new { @class = "control-label" })
+
+                            @Html.TextBoxFor(c => c.BookUrl, new { @class = "form-control" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.CategoryName, new { @class = "control-label" })
+
+                            @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control" })
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.IsPdf, new { @class = "control-label" })
+
+                            @Html.TextBoxFor(c => c.IsPdf, new { @class = "form-control" })
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.IsFeatured, new { @class = "control-label" })
+
+
+
+                            @Html.TextBoxFor(c => c.IsFeatured, new { @class = "form-control" })
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.AuthorName, new { @class = "control-label" })
+
+
+
+                            @Html.TextBoxFor(c => c.AuthorName, new { @class = "form-control" })
+
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Publisher, new { @class = "control-label" })
+
+
+
+                            @Html.TextBoxFor(c => c.Publisher, new { @class = "form-control" })
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-md-6">
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.YearPublished, new { @class = "control-label" })
+
+
+
+                            @Html.TextBoxFor(c => c.YearPublished, new { @class = "form-control" })
+
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label>Add Book</label>
+                            <input type="submit" value="Add Book" class="btn btn-success btn-block" />
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+        }*@
+
+</section>
